@@ -11,30 +11,47 @@ namespace FiguresInheritanceForUser
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome. Select the work mode, type it and press ENTER button:\n" +
+                              "1 - Laboratory work №1 (Test mode)\n" +
+                              "2 - Laboratory work №2 (User mode)\n");
+
+            Console.Write("Type the mode: ");
+            int num = int.Parse(Console.ReadLine());
+
             var figuresContainer = new List<Figure>();
 
-            figuresContainer.Add(new Figure());
-            figuresContainer.Add(new LineSegment(10.5f));
-            figuresContainer.Add(new Square(7.8f));
-            figuresContainer.Add(new Cube(15.6f));
-            figuresContainer.Add(new Rectangle(4.2f, 2.1f));
-            figuresContainer.Add(new Rhombus(11, 5.5f));
-            figuresContainer.Add(new Triangle(5, 8, 10));
-            figuresContainer.Add(new TrianglePrism(5.5f, 8.8f, 10.1f, 12.4f));
-            figuresContainer.Add(new Circle(11.1f));
-            figuresContainer.Add(new Cylinder(21.3f, 7));
-            figuresContainer.Add(new Cone(18.2f, 8.9f));
+            switch (num)
+            {
+                case (1):
+                    figuresContainer.Add(new Figure());
+                    figuresContainer.Add(new LineSegment(10.5f));
+                    figuresContainer.Add(new Square(7.8f));
+                    figuresContainer.Add(new Cube(15.6f));
+                    figuresContainer.Add(new Rectangle(4.2f, 2.1f));
+                    figuresContainer.Add(new Rhombus(11, 5.5f));
+                    figuresContainer.Add(new Triangle(5, 8, 10));
+                    figuresContainer.Add(new TrianglePrism(5.5f, 8.8f, 10.1f, 12.4f));
+                    figuresContainer.Add(new Circle(11.1f));
+                    figuresContainer.Add(new Cylinder(21.3f, 7));
+                    figuresContainer.Add(new Cone(18.2f, 8.9f));
 
-            PrintAllFigures(figuresContainer);
-            Console.WriteLine("-------------------------------------------------------");
-            PrintFigureByID(figuresContainer, 3);
-            Console.WriteLine("-------------------------------------------------------");
-            DeleteFigureByID(figuresContainer, 3);
-            Console.WriteLine("-------------------------------------------------------");
-            PrintAllFigures(figuresContainer);
+                    PrintAllFigures(figuresContainer);
+                    Console.WriteLine("-------------------------------------------------------");
+                    PrintFigureByID(figuresContainer, 3);
+                    Console.WriteLine("-------------------------------------------------------");
+                    DeleteFigureByID(figuresContainer, 3);
+                    Console.WriteLine("-------------------------------------------------------");
+                    PrintAllFigures(figuresContainer);
 
-            Console.WriteLine("Done :)");
-            Console.ReadLine();
+                    Console.WriteLine("Done :)");
+                    Console.ReadLine();
+                    break;
+
+                default:
+                    Console.WriteLine("You've typed wrong number. Program was executed. Press ENTER button.");
+                    Console.ReadLine();
+                    break;
+            }
         }
 
         static void PrintAllFigures(List<Figure> figuresList)
@@ -77,6 +94,39 @@ namespace FiguresInheritanceForUser
             }
             Console.WriteLine("Figure with that index does not exist. Nothing happened.");
             return;
+        }
+
+        static void ShowExistingMethods()
+        {
+            Console.Clear();
+            Console.WriteLine("Please, choose any action: ");
+            Console.WriteLine("1 - Add new figure");
+            Console.WriteLine("2 - Delete figure by index");
+            Console.WriteLine("3 - Print figure by index");
+            Console.WriteLine("4 - Print all figures");
+            Console.WriteLine("0 - Exit\n");
+
+            Console.Write("Write down an action: ");
+        }
+
+        static void ShowPossibleFigures()
+        {
+            Console.Clear();
+            Console.WriteLine("Please, choose the figure to add: ");
+            Console.WriteLine("1 - Figure interpritation");
+            Console.WriteLine("2 - Line segment");
+            Console.WriteLine("3 - Square");
+            Console.WriteLine("4 - Cube");
+            Console.WriteLine("5 - Rectangle");
+            Console.WriteLine("6 - Rhombus");
+            Console.WriteLine("7 - Triangle");
+            Console.WriteLine("8 - Triangle prism");
+            Console.WriteLine("9 - Circle");
+            Console.WriteLine("10 - Cylinder");
+            Console.WriteLine("11 - Cone\n");
+            Console.WriteLine("0 - Back\n");
+
+            Console.Write("Write down an action: ");
         }
     }
 }
