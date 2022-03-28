@@ -1,4 +1,5 @@
-﻿using FiguresInheritanceForUser.Models;
+﻿using FiguresInheritanceForUser.domain;
+using FiguresInheritanceForUser.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,6 +60,7 @@ namespace FiguresInheritanceForUser
 
                         if (choice == 1)  // Add figure
                         {
+                            FiguresFactory figuresFactory = new FiguresCreator("ООО Figures_Creator");
                             ShowPossibleFigures();
                             int action = int.Parse(Console.ReadLine());
 
@@ -68,117 +70,99 @@ namespace FiguresInheritanceForUser
                                 case 0:
                                     break;
 
-                                // Figure
+                                // Figure DONE  
                                 case 1:
-                                    figuresContainer.Add(new Figure());
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Line segment
+                                // Line segment DONE
                                 case 2:
-                                    Console.Write("Length = ");
-                                    float length = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new LineSegment(length));
+                                    figuresFactory = new LineSegmentCreator("OOO LineSegment_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Square
+                                // Square DONE
                                 case 3:
-                                    Console.Write("Side = ");
-                                    float side = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Square(side));
+                                    figuresFactory = new SquareCreator("ООО Square_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Cube
+                                // Cube DONE
                                 case 4:
-                                    Console.Write("Side = ");
-                                    side = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Cube(side));
+                                    figuresFactory = new CubeCreator("ООО Cube_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Rectangle
+                                // Rectangle DONE
                                 case 5:
-                                    Console.Write("Length = ");
-                                    length = float.Parse(Console.ReadLine());
-                                    Console.Write("Width = ");
-                                    float width = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Rectangle(length, width));
+                                    figuresFactory = new RectangleCreator("ООО Rectangle_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Rhombus
+                                // Rhombus DONE
                                 case 6:
-                                    Console.Write("Length = ");
-                                    length = float.Parse(Console.ReadLine());
-                                    Console.Write("Heigh = ");
-                                    float heigh = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Rhombus(length, heigh));
+                                    figuresFactory = new RhombusCreator("ООО Rhombus_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Triangle
+                                // Triangle DONE
                                 case 7:
-                                    Console.Write("Side A = ");
-                                    float sideA = float.Parse(Console.ReadLine());
-                                    Console.Write("Side B = ");
-                                    float sideB = float.Parse(Console.ReadLine());
-                                    Console.Write("Side C = ");
-                                    float sideC = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Triangle(sideA, sideB, sideC));
+                                    figuresFactory = new TriangleCreator("ООО Triangle_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Triangle prism
+                                // Triangle prism DONE
                                 case 8:
-                                    Console.Write("Side A = ");
-                                    sideA = float.Parse(Console.ReadLine());
-                                    Console.Write("Side B = ");
-                                    sideB = float.Parse(Console.ReadLine());
-                                    Console.Write("Side C = ");
-                                    sideC = float.Parse(Console.ReadLine());
-                                    Console.Write("Heigh = ");
-                                    heigh = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new TrianglePrism(sideA, sideB, sideC, heigh));
+                                    figuresFactory = new TrianglePrismCreator("ООО TrianglePrism_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Circle
+                                // Circle DONE
                                 case 9:
-                                    Console.Write("Radius = ");
-                                    float radius = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Circle(radius));
+                                    figuresFactory = new CircleCreator("ООО Circle_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Cylinder
+                                // Cylinder DONE
                                 case 10:
-                                    Console.Write("Radius = ");
-                                    radius = float.Parse(Console.ReadLine());
-                                    Console.Write("Heigh = ");
-                                    heigh = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Cylinder(radius, heigh));
+                                    figuresFactory = new CylinderCreator("ООО Cylinder_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;
 
-                                // Cone
+                                // Cone DONE
                                 case 11:
-                                    Console.Write("Radius = ");
-                                    radius = float.Parse(Console.ReadLine());
-                                    Console.Write("Heigh = ");
-                                    heigh = float.Parse(Console.ReadLine());
-                                    figuresContainer.Add(new Cone(radius, heigh));
+                                    figuresFactory = new ConeCreator("ООО Cone_Creator");
+
+                                    figuresContainer.Add(figuresFactory.AddFigure());
                                     Console.WriteLine("Done");
                                     Console.ReadLine();
                                     break;

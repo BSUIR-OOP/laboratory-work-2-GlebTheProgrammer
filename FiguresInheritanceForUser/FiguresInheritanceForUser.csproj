@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\FiguresFactory.cs" />
     <Compile Include="Interfaces\IFigure.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Cone.cs" />
@@ -60,9 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FiguresInheritanceDiagram.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="domain\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
