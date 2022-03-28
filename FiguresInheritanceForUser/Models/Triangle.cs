@@ -11,7 +11,7 @@ namespace FiguresInheritanceForUser.Models
         protected float SideA { get; set; }
         protected float SideB { get; set; }
 
-        protected float sideC;
+        private float sideC;
         protected float SideC
         {
             get { return sideC; }
